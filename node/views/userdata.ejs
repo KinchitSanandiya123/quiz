@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%- title %>
+    </title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 10px 50px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-data">
+        <h2>Display Data using Node.js & MySQL</h2>
+        <table>
+            <tr>
+
+                <th>Full Name</th>
+                <th>Contact</th>
+                <th>Email Address</th>
+                <th>password</th>
+                <th>Action</th>
+
+            </tr>
+
+            <% row.forEach(function( result){ %>
+                <tr>
+
+                    <td>
+                        <%=result.name %>
+                    </td>
+                    <td>
+                        <%=result.contact %>
+                    </td>
+                    <td>
+                        <%=result.email %>
+                    </td>
+                    <td>
+                        <%=result.password %>
+                    </td>
+                    <td>
+                        <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')"/>
+                        <input type="button" value="Delete" class="delete" onclick="delete_row('3')"/>
+                    </td>
+                </tr>
+                <% }) %>
+
+
+
+        </table>
+    </div>
+</body>
+
+</html>
